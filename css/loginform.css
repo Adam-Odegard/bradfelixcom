@@ -1,0 +1,52 @@
+.form_input{
+	float:left;
+	clear:both;
+}
+
+#loginform label{
+	float:left;
+	clear:both;
+}
+
+.subButton{
+	float:left;
+	clear:both;
+}
+
+#loginform{
+	clear:both;
+}
+
+#logoutform{
+	position:absolute;
+	top:50px;
+	left:965px;
+}
+
+#formerror_wrap{
+	display:none;
+	float:left;
+	clear:both;
+	width:800px;
+	background-color:#FFE4E1;
+	border:3px solid #FF0000;
+	margin-bottom:20px;
+}
+
+#formerror_wrap .formerror{
+	margin:10px;
+}
+
+#formsuccess{
+	display:none;
+	float:left;
+	clear:both;
+	width:800px;
+	background-color:#E0EEE0;
+	border:3px solid #33CC00;
+	margin-bottom:20px;
+}
+
+#formsuccess .green{
+	margin:10px;
+}
