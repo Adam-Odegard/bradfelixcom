@@ -1,0 +1,12 @@
+
+.DBG_size_box {
+	width:100px;
+	height:25px;
+	border:1px solid #000000;
+	background-color:#ffffcc;
+	font-family:Arial;
+	font-size:10px;
+	color:#990000;
+	z-index:999;
+	position:absolute;
+}

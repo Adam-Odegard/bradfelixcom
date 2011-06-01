@@ -23,6 +23,10 @@ class Home extends CI_Controller {
 	public function index($data = "")
 	{
 		
+		$data['rotator'] = $this->load->view('rotator', '', TRUE);
+		$data['twitter'] = $this->load->view('twitter', '', TRUE);
+		$data['facebook'] = $this->load->view('facebook', '', TRUE);
+		$data['sidebar'] = $this->load->view('sidebar', '', TRUE);
 		
 		/***********************
 			TEMPLATE STUFF
@@ -32,12 +36,16 @@ class Home extends CI_Controller {
 			$this->template->write('title', 'bradfelix.com');
 			
 			//load external scripts & css
-			$this->template->add_css('css/main.css');
-			$this->template->add_css('css/loginform.css');
-			
+			$this->template->add_css('css/site.css');
+			$this->template->add_js('js/EqualHeights.js');
+			$this->template->add_js('js/site.js');
+			$this->template->add_js('js/prototype.js');
+			$this->template->add_js('js/scriptaculous.js?load=effects,builder');
+			$this->template->add_js('js/lightbox.js');
 			
 			//load views into template regions
-			//$this->template->write_view('header', 'auth', $data);
+			$this->template->write_view('header', 'sitehead', $data);
+			$this->template->write_view('nav', 'nav', $data);
 			$this->template->write_view('content', 'default', $data);
 			
 			//render template

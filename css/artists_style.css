@@ -1,0 +1,1217 @@
+#LeftBar {
+	float:left;
+	position:relative;
+	width:620px;
+	margin:0px 10px 0px 10px;
+}
+
+#Sidebar {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	/*background-color:#43a4c7;*/
+	float:left;
+	position:relative;
+	width:300px;
+}
+
+#Sidebar.div {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#view {
+	width:618px;
+	text-align:left;
+	/*background-color:#ffffff;*/
+	/*border:1px solid #000000;*/
+}
+
+
+#view_artist_main {
+	width:618px;
+	text-align:left;
+}
+
+.innerContent {
+	margin-left:10px;
+	/*margin-right:10px;*/
+	
+}
+
+.innerContent h1 {
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	clear:both;
+	margin-left:0px;
+	margin-top:9px;
+	margin-right:10px;
+}
+
+#artist_info_box h1 {
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	clear:both;
+	margin-left:0px;
+	margin-top:10px;
+	margin-right:0px;
+}
+
+
+.innerContent_artist_main h1 {
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	padding-top:0px;
+	position:relative;
+	top:-7px;	
+	clear:both;
+	margin-left:0px;
+	margin-top:10px;
+	margin-right:0px;
+}
+
+.innerContent_releases h1 {
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	padding-top:0px;
+	position:relative;
+	top:-3px;	
+	clear:both;
+	margin-left:0px;
+	margin-top:10px;
+	margin-right:0px;
+}
+
+.innerContent_tourdates h1 {
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	padding-top:0px;
+	position:relative;
+	top:10px;	
+	clear:both;
+	margin-left:10px;
+	/*margin-right:10px;*/
+	margin-top:11px;
+}
+
+.innerContent_tracks {
+	margin-bottom:10px;
+}
+
+.innerContent_tracks h1 {
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	padding-top:0px;
+	position:relative;
+	top:10px;	
+	clear:both;
+	margin-left:10px;
+	/*margin-right:10px;*/
+	margin-top:11px;
+}
+
+.innerContent_results h1{
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	padding-top:0px;
+	position:relative;
+	top:10px;	
+	clear:both;
+	margin-left:10px;
+	/*margin-right:10px;*/
+	margin-top:0px;
+}
+
+#artist_info_box {
+	clear:both;
+	width:598px;
+	border:1px solid #000000;
+	border-top-style:none;
+	background-color:#ffffff;
+	padding-left:10px;
+	padding-right:10px;
+	margin-bottom:0px;
+	
+}
+
+h1 {
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+}
+
+#artist_page_image_wrapper {
+	width:200px;
+	margin:0px 5px 0px 10px;
+	height:200px;
+	float:right;
+}
+
+#artist_page_image {
+	border:1px solid #000;
+	width:200px;
+	overflow:hidden;
+}
+
+#artist_page_image_wrapper_no {
+	width:605px;
+	margin:0px 5px 0px 10px;
+	height:200px;
+	
+}
+
+#artist_page_image_no {
+	border:1px solid #000;
+	width:200px;
+	height:200px;
+	margin-right:20px;
+	overflow:hidden;
+	float:right;
+}
+
+#artist_page_image img {
+	display:block;
+}
+
+#artist_page_caption {
+	text-align: right;
+	font-size:.85em;
+	margin-right:20px;
+}
+
+#artist_page_description {
+	text-align:justify;
+	padding: 0px 5px 10px 5px;
+	font-size:12px;
+}
+
+#artist_page_description a {
+	text-decoration: underline;
+}
+
+#wikipedia_disclaimer {
+	font-size:.85em;
+	margin-top:10px;
+	margin-bottom:4px;
+	padding-top:20px;
+	clear:both;
+}
+
+.artist_page_album {
+	clear:both;
+	width:618px;
+	padding:0px;
+	border:1px solid #000000;
+	border-top:0px;
+	background-color:#ffffff;
+	height:100%;
+}
+
+.artist_page_album_wrapper {
+	float:left;
+	width:578px;
+	padding:5px 10px 5px 10px;
+	margin-left:10px;
+	background-color:#ffffff;
+	border:1px solid #fff;
+	display: inline;
+}
+
+.artist_page_album_wrapper:hover{
+	background-color:#0068cb;
+	color:#fff;
+	border:1px solid #000;
+}
+
+.artist_page_album_wrapper:hover a:link,
+.artist_page_album_wrapper:hover a:active,
+.artist_page_album_wrapper:hover a:visited{
+	color:#fff;
+}
+.artist_page_album_wrapper a:hover{
+	color:#fff;
+}
+
+.darker {
+	background-color:#cfcfcf;
+}
+
+.separator {
+	clear:both;
+}
+
+.artist_page_disc_image {
+	float:left;
+	border:1px solid #000;
+	margin:5px;
+	width:100px;
+	height:100px;
+	display: inline;
+}
+
+.artist_page_disc_info {
+	float:left;
+	margin:5px;
+	width:300px;
+	display: inline;
+}
+
+.artist_page_disc_info a:link,
+.artist_page_disc_info a:visited,
+.artist_page_disc_info a:active {
+	color:#0068cb;
+	text-decoration: underline;
+}
+
+.artist_page_disc_info a:hover {
+	color:#0068cb;
+	text-decoration:underline;
+}
+
+.artist_page_buttons_1 {
+	float:right;
+	position:relative;
+	top:45px;
+	vertical-align:middle;
+	width:100px;
+	margin-right:0px;
+	display: inline;
+}
+
+.artist_page_buttons_2 {
+	float:right;
+	position:relative;
+	top:30px;
+	vertical-align:middle;
+	width:100px;
+	margin-right:0px;
+	display: inline;
+}
+
+
+.artist_page_album_title_link {
+	font-size:18px;
+	font-weight:bold;
+	
+}
+
+.artist_page_album_tracklisting {
+	
+}
+
+#video_page_title_bar {
+	/*background-image: url(/media/structure/poweredby_yahoo.png);*/
+	background-repeat:no-repeat;
+	background-position:right top;
+
+}
+
+#video_page_title_bar h1{
+	color:#0068cb;
+	border-bottom: 2px solid #0068cb;
+	font-size:26px;
+	text-align:left;
+	padding-top:0px;
+	position:relative;
+	top:6px;	
+	clear:both;
+	margin-left:10px;
+	margin-top:-12px;
+}
+	
+
+#artist_page_links_wrapper {
+	clear:both;
+	width:618px;
+	border:1px solid #000000;
+	border-top:0px;
+	background-color:#ffffff;
+	margin:0px 20px 15px 0px;
+}
+
+.artist_page_links {
+	font-size:14px;
+	margin:0px 10px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+a#icons:hover {
+	text-decoration: none;
+}
+
+.artist_page_tourdates_wrapper {
+	clear:both;
+	width:618px;
+	border:1px solid #000000;
+	border-top:0px;
+	background-color:#ffffff;
+	padding-top:10px;
+}
+
+.tourdates_wrapper {
+	width:600px;
+	margin:auto;
+}
+
+.artist_page_tourdates_wrap {
+	width:600px;
+	margin-left:9px;
+}
+
+.artist_page_tourdates {
+	padding:0px 0px 0px 0px;	
+	border:1px solid #fff;
+}
+
+.tourdates_city a:link,.tourdates_city a:active, .tourdates_city a:visited, .tourdates_more_detail a:link, .tourdates_more_detail a:active, .tourdates_more_detail a:visited{
+	text-decoration: underline;
+}
+
+.artist_page_tourdates:hover{
+	background-color:#0068cb;
+	color:#fff;
+	border:1px solid #000;
+}
+
+.artist_page_tourdates:hover a{
+	color:#fff;
+}
+.artist_page_tourdates a:hover{
+	color:#fff;
+}
+
+
+.tourdates_date {
+	clear:both;
+	float:left;
+	width:200px;
+	padding:10px;
+	display: inline;
+}
+	
+.tourdates_city {
+	float:left;
+	padding:10px;
+	margin-left:20px;
+	display: inline;
+}
+
+.tourdates_more_detail {
+	float:right;
+	padding:14px 10px 10px 10px;
+	display: inline;
+}
+
+.tourdates_view_more {
+	clear:both;
+	float:right;
+	margin:25px 10px 0px 10px;
+	text-decoration: underline;
+	display: inline;
+}
+
+.eventful-badge,
+.eventful-badge * {
+  margin: 10px 0px 0px 10px      !important;
+  padding: 0            !important;
+  border: 0             !important;
+  text-align: center    !important;
+  color: #333	          !important;
+  font-family: Arial    !important;
+  text-decoration: none !important;
+}
+
+.eventful-large {
+  position: relative    !important;
+  width: 140px          !important;
+  font-size: 15px       !important;
+  line-height: 17px     !important;
+  font-weight: bold     !important;
+}
+
+.eventful-medium {
+  position: relative    !important;
+  width: 100px          !important;
+  font-size: 12px       !important;
+  line-height: 13px     !important;
+}                     
+                      
+.eventful-small {     
+  position: relative    !important;
+  width: 100px          !important;
+  font-size: 10px       !important;
+  line-height: 10px     !important;
+  top:-10px;
+}
+
+.eventful_link {
+ width:100px;
+ position:relative;
+ left:5px;
+ bottom:0px;
+}
+
+#event_wrapper{
+    font-size:.75em;
+    font-family:Arial,sans-serif;
+}
+
+a:link,a:active,a:visited{
+    text-decoration:none;
+    color:#0068cb;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+#event_wrapper .head{
+    font-size:1.15em;
+    width:300px;
+    height:20px;
+    text-decoration: underline;
+} 
+
+
+#artist_page_videos {
+	clear:both;
+	width:618px;
+	border:1px solid #000000;
+	border-top:0px;
+	background-color:#ffffff;
+	margin-bottom:15px;
+	
+}
+
+.video_links_wrapper {
+	width:618px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.video_links {
+	float:left;
+	width:120px;
+	margin:10px 17px 0 17px !important;
+	text-align:center;
+	display: inline;
+}
+
+.video_links a {
+	text-decoration: underline;
+}
+
+.video_links_play {
+	font-size:1em;
+	position:relative;
+	top:-33px;
+	width:120px;
+	margin:0px auto 0px auto;
+}
+
+.view_more_videos {
+	clear:both;
+	float:right;
+	position:relative;
+	top:-25px;
+	margin:0px 10px 0px 0px;
+	text-decoration: underline;
+	display: inline;
+}
+
+.releases_view_more {
+	float:right;
+	margin:10px 10px 10px 10px;
+	text-decoration: underline;
+	display: inline;
+}
+
+.artist_links {
+	margin-top:-45px;
+	margin-bottom:0px;
+	margin-left:10px;
+	font-size:14px;
+	line-height:20px;
+	text-decoration: underline;
+}
+
+.artist_main_links {
+	margin-top:-45px;
+	margin-bottom:0px;
+	font-size:14px;
+	line-height:20px;
+	text-decoration: underline;
+}
+
+#releases {
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:12px;
+}
+
+.releases_wrapper {
+	width:618px;
+	background:#fff;
+	
+}
+
+
+.releases_album_wrapper {
+	float:left;
+	width:596px;
+	padding:10px 0 10px 0;
+	margin-left:10px;
+	border:1px solid #fff;
+	display: inline;
+}
+
+.releases_album_wrapper:hover{
+	background-color:#725c32;
+	color:#fff;
+	border:1px solid #000;
+}
+
+.releases_album_wrapper:hover a:link,
+.releases_album_wrapper:hover a:active,
+.releases_album_wrapper:hover a:visited{
+	color:#fff;
+}
+
+.releases_album_wrapper a:hover{
+	color:#fff;
+}
+
+
+.releases_disc_image {
+	float:left;
+	border:1px solid #000;
+	margin-left:10px;
+	width:100px;
+	height:100px;
+	display: inline;
+}
+
+.releases_disc_info {
+	float:left;
+	margin:5px;
+	width:300px;
+	display: inline;
+}
+
+.releases_disc_info a:link,
+.releases_disc_info a:visited,
+.releases_disc_info a:active {
+	color:#0068cb;
+	text-decoration: underline;
+}
+
+.releases_disc_info a:hover {
+	color:#0068cb;
+	text-decoration:underline;
+}
+
+.releases_buttons_1 {
+	float:right;
+	position:relative;
+	top:45px;
+	vertical-align:middle;
+	width:100px;
+	margin-right:5px;
+	display: inline;
+}
+
+.releases_buttons_2 {
+	float:right;
+	position:relative;
+	top:30px;
+	vertical-align:middle;
+	width:100px;
+	margin-right:5px;
+	display: inline;
+}
+
+
+
+.track_releases_buttons_1 {
+	margin:10px;
+	position:relative;
+	left:245px;
+	top:5px;
+}
+
+.track_releases_buttons_2 {
+	margin:10px;
+	position:relative;
+	left:190px;
+}
+
+.track_amazon_button {
+	width:100px;
+	height:25px;
+	margin:0px 5px 0px 5px;
+	float:left;
+	position:relative;
+	display: inline;
+}
+
+.track_itunes_button {
+	width:100px;
+	height:25px;
+	margin:0px 5px 0px 5px;
+	float:left;
+	position:relative;
+	top:-18px;
+	display: inline;
+}
+
+.tracks { 
+	margin-left:0px;
+}
+
+.track_row_info {
+	
+	margin:0px auto 0 auto;
+	width:600px;
+}
+
+.track_time {
+	float:right;
+	margin-right:10px;
+	display: inline;
+}
+
+.track_row {
+	float:left;
+	width:598px;
+	padding:5px 0px 5px 0px;	
+	border:1px solid #fff;
+	display: inline;
+	font-size: .8em;
+}
+
+.track_row:hover{
+	background-color:#0068cb;
+	color:#fff;
+	border:1px solid #000;
+}
+
+
+.track_title_line {
+	clear:both;
+	font-size:1.5em;
+	font-weight:bold;
+	text-align: center;
+}
+
+.track_release_date {
+	font-size:1.5em;
+	text-align: center;
+}
+
+.track_label {
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.track_title {
+	float:left;
+	width:500px;
+	display: inline;
+}
+
+.track_number {
+	float:left;
+	margin-right:10px;
+	width:20px;
+	margin-left:10px;
+	display: inline;
+}
+
+.playlist_wrapper {
+	clear:both;
+	width:620px;
+	padding-top:15px;
+	
+}
+
+.playlist_row {
+	clear:both;
+	width:600px;
+	padding:20px 0px 20px 0px;	
+	border:1px solid #fff;
+}
+
+.row_title {
+	margin-top:-10px;
+}
+
+.row_content{
+	width:600px;
+	margin-top:10px;
+}
+
+.row_video{
+	width:240px;
+	float:left;
+}
+
+.row_description{
+	width:240px;
+	float:left;
+}
+
+.row_photo{
+	width:100px;
+	float:left;
+}
+
+.playlist_row{
+	font-size: .8em;
+}
+
+.playlist_row:hover{
+	background-color:#0068cb;
+	color:#fff;
+	border:1px solid #000;
+}
+
+.playlist_row:hover a{
+	color:#fff;
+}
+.playlist_row a:hover{
+	color:#fff;
+}
+
+.playlist_id {
+	float:left;
+	width:190px;
+	margin-left:10px;
+	display: inline;
+}
+
+.playlist_name {
+	float:left;
+	width:190px;
+	margin-left:10px;
+	text-decoration: underline;
+	display: inline;
+}
+
+.playlist_title {
+	float:left;
+	width:190px;
+	margin-left:10px;
+	display: inline;
+}
+
+.playlist_id_h {
+	float:left;
+	width:190px;
+	font-size:1em;
+	font-weight:bold;
+	text-decoration: underline;
+	margin-left:10px;
+	display: inline;
+}
+
+.playlist_name_h {
+	float:left;
+	width:190px;
+	margin-left:10px;
+	font-size:1em;
+	font-weight:bold;
+	text-decoration: underline;
+	display: inline;
+}
+
+.playlist_title_h {
+	float:left;
+	width:190px;
+	font-size:1em;
+	font-weight:bold;
+	text-decoration: underline;
+	display: inline;
+	margin-left:10px;
+}
+
+.playlist_selection {
+	clear:both;
+	float:right;
+	display: inline;
+}
+
+.vertical_space {
+	line-height:2px;
+}
+
+.artist_link_inner {
+	text-align: center; 
+	color:#0068cb;
+}
+
+
+#artist_links_wrapper {
+	width:618px;
+	margin:25px auto 10px auto;
+	/*margin:0 5px 0 5px;*/
+	padding:0px;
+}
+
+.artist_ind_link {
+	float:left;
+	width:287px;
+	height:122px;
+	border:1px solid #0068cb;
+	margin:8px 5px 5px 5px;
+	background-color:#c8e3fd;	
+	display: inline;
+}
+
+.artist_main_ind_link {
+	float:left;
+	width:270px;
+	height:120px;
+	border:1px solid #0068cb;
+	margin:10px 0px 10px 10px;
+	background-color:#fff;	
+	display: inline;
+}
+
+.artist_main_ind_link img {
+	display:block;
+}
+
+
+
+.artist_result_image{
+	float:left;
+	height:100px;
+	width:100px;
+	border:1px solid #0068cb;
+	margin:10px 10px;
+	display: inline;
+
+}
+
+.artist_main_result_image{
+	float:left;
+	height:100px;
+	width:100px;
+	display: inline;
+	margin:10px 10px 10px 10px;
+
+}
+
+.artist_result_link {
+	float:left;
+	width:160px;
+	margin-top:50px;
+	color:#0068cb;
+	font-weight:bold;
+	font-size:16px;
+	display: inline;
+}
+
+
+.artist_result_link a:link,
+.artist_result_link a:visited,
+.artist_result_link a:hover,
+.artist_result_link a:active {
+	color:#0068cb;
+}
+
+.artist_main_result_link {
+	float:left;
+	width:140px;
+	margin-top:50px;
+	color:#0068cb;
+	font-weight:bold;
+	font-size:16px;
+	text-align:center;
+	display: inline;
+}
+
+
+.artist_main_result_link a:link,
+.artist_main_result_link a:visited,
+.artist_main_result_link a:hover,
+.artist_main_result_link a:active {
+	color:#0068cb;
+}
+
+
+.rss {
+	float:right;
+	margin-right:5px !important;
+	position:relative;
+	top: -35px;
+}
+
+.rss_front {
+	float:right;
+	margin-right:5px !important;
+	position:relative;
+	top: 0px;
+}
+
+.no_videos {
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+.footer_bottom_leaderboard {
+	display:none;
+}
+
+
+.track_page_image {
+	border:1px solid #000;
+	margin-top:10px;
+}
+
+.artistplayOverlay {
+	background:url("http://music.bonnevillecincinnati.com/media/up_play.png")transparent no-repeat 0 0;
+	width:50px;
+	height:16px;
+	position:relative;
+	top:-30px;
+	left:0px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://music.bonnevillecincinnati.com/media/up_play.png");
+	margin-left:10px;
+	margin-bottom:10px;
+	}
+
+a:hover img.artistplayOverlay {
+	background:url("http://music.bonnevillecincinnati.com/media/over_play.png")transparent no-repeat 0 0;
+	width:50px;
+	height:16px;
+	position:relative;
+	top:-30px;
+	left:0px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://music.bonnevillecincinnati.com/media/over_play.png");
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+.artistmainplayOverlay {
+	background:url("http://music.bonnevillecincinnati.com/media/up_play.png")transparent no-repeat 0 0;
+	width:50px;
+	height:16px;
+	border-bottom: hidden;
+	position:relative;
+	top:-30px;
+	left:-30px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://music.bonnevillecincinnati.com/media/up_play.png");
+	margin-left:10px;
+	margin-bottom:10px;
+	}
+
+a:hover img.artistmainplayOverlay {
+	background:url("http://music.bonnevillecincinnati.com/media/over_play.png")transparent no-repeat 0 0;
+	width:50px;
+	height:16px;
+	position:relative;
+	top:-30px;
+	left:-30px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://music.bonnevillecincinnati.com/media/over_play.png");
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+.clear {
+clear:both;
+margin:20px;
+}
+
+
+
+
+/*///// Featured Artist /////*/
+
+#featured_artist {
+	width:598px;
+	height:328px;
+	background-image: url(/media/structure/aldean_holder.jpg);
+	background-repeat:no-repeat;
+	border: 1px solid #000;
+	margin:0px auto 10px auto;
+}
+
+#featured_artist_overlay {
+	font-family:arial,sans serif;
+	width:600px;
+	margin-top:240px;
+	color:#fff;
+	padding:10px;
+}
+
+#featured_artist_overlay h2{
+	font-size:26px;
+	font-weight:bold;
+	margin:0px;
+}
+
+#featured_artist_overlay h3{
+	font-size:12px;
+	font-weight:bold;
+	margin:0px;
+}
+
+#featured_artist_overlay p{
+	margin-top:4px;
+}
+
+
+
+#Contest_home_block {
+	width:618px;
+	/*height:230px;*/
+	background-color:#fff;
+	border:1px solid #000;
+	border-top:0px;
+	padding-top:10px;
+}
+
+.ap_small{
+	font-size:.7em;
+	float:left;
+	text-decoration: none;
+	margin-right:5px;
+	display: inline;
+}
+
+.artist_page_small_links a:link,
+.artist_page_small_links a:visited,
+.artist_page_small_links a:active,
+.artist_page_small_links a:hover{
+	font-size:.9em;
+	
+}
+
+.bb_wrapper {
+	clear:both;
+	width:620px;
+	padding-top:5px;
+	padding-bottom:10px;
+	
+}
+
+.billboard_row_wrap {
+	clear:both;
+	width:596px;
+	padding:10px 0px 10px 0px;	
+	border:1px solid #fff;
+	
+}
+
+.billboard_row_wrap a {
+	text-decoration: underline;
+}
+
+.billboard_row_wrap:hover{
+	background-color:#725c32;
+	color:#fff;
+	border:1px solid #000;
+}
+
+.billboard_row_wrap:hover a{
+	color:#fff;
+}
+
+.billboard_rank {
+	float:left;
+	width:75px;
+	margin-left:10px;
+	display: inline;
+	margin-right:10px;
+}
+
+.billboard_song_name {
+	float:left;
+	width:190px;
+	text-decoration: underline;
+	display: inline;
+}
+
+.billboard_artist_name {
+	float:right;
+	width:215px;
+	margin-right:-10px;
+	display: inline;
+	margin-top:-15px;
+}
+
+.bb_id_h {
+	float:left;
+	width:75px;
+	font-size:1em;
+	font-weight:bold;
+	text-decoration: underline;
+	margin-left:10px;
+	display: inline;
+}
+
+.bb_name_h {
+	float:left;
+	width:190px;
+	margin-left:10px;
+	font-size:1em;
+	font-weight:bold;
+	text-decoration: underline;
+	display: inline;
+}
+
+.bb_title_h {
+	float:right;
+	width:215px;
+	font-size:1em;
+	font-weight:bold;
+	text-decoration: underline;
+	display: inline;
+	margin-right:10px;
+}
+
+.billboard_row_wrap {
+	
+}
+
+.billboard_artist_name {
+	
+}
+
+#billboard_logo {
+	background: url("/media/structure/providedbybillboard.png");
+	width:114px;
+	height:43px;
+	float:right;
+	margin-top:-55px;
+	
+	
+}
+
+.titlebar_artist {
+	background-color:#134778;
+	border-bottom:7px solid #0068cb;
+	/*width:100%;*/
+	height:28px;
+	border-left:1px solid #134778;
+	border-top:1px solid #134778;
+	border-right:1px solid #134778;
+	width:618px;
+}

@@ -1,0 +1,8 @@
+<div style="position:relative; top:-5px; margin-bottom:20px;">
+<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+<script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/bradfelix" data-format="inline"></script>
+</div>
+
+<div style="position:relative; left:5px; margin-bottom:20px;">
+<!-- Facebook Badge START --><a href="http://www.facebook.com/bradfelix" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Brad Felix">Brad Felix</a><span style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 16px; font-variant: normal; font-style: normal; font-weight: normal; color: #555555; text-decoration: none;">&nbsp;|&nbsp;</span><a href="http://www.facebook.com/badges/" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Make your own badge!">Create Your Badge</a><br/><a href="http://www.facebook.com/bradfelix" target="_TOP" title="Brad Felix"><img src="http://badge.facebook.com/badge/206301345.393.1302100233.png" width="350" height="133" style="border: 0px;" /></a><!-- Facebook Badge END -->
+</div>

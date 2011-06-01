@@ -60,8 +60,9 @@ $template['default']['template'] = 'template';
 $template['default']['regions'] = array(
    'header',
    'title',
+   'nav',
    'content',
-   'footer',
+   'footer'
 );
 $template['default']['parser'] = 'parser';
 $template['default']['parser_method'] = 'parse';
