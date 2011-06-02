@@ -7,9 +7,9 @@
 		
 		<li id="mainMenu_Events" class="menu_ns" onclick="window.location = '/events'"><a href="/events/">News/Events</a></li>
 		
-		<li id="mainMenu_FloridaGators" class="menu_ns" onclick="window.location = '/floridagators'"><a href="/floridagators/">Gators</a></li>
+		<li id="mainMenu_FloridaGators" class="menu_ns" onclick="window.location = '/gators/feed/'"><a href="/gators/feed/">Gators</a></li>
 		
-		<li id="mainMenu_CincinnatiBengals" class="menu_ns" onclick="window.location = '/cincinnatibengals'"><a href="/cincinnatibengals/">Bengals</a>		</li>
+		<li id="mainMenu_CincinnatiBengals" class="menu_ns" onclick="window.location = '/bengals/feed/'"><a href="/bengals/feed/">Bengals</a>		</li>
 		
 		<li id="mainMenu_Photos" class="menu_ns" onclick="window.location = '/photos'"><a href="/photos/">Photos</a></li>
 		

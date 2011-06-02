@@ -55,6 +55,10 @@ class Home extends CI_Controller {
 			END OF TEMPLATE STUFF
 		****************************/
 	}
+	
+	function testtest(){
+		$this->load->view('test');
+	}
 }
 
 /* End of file home.php */

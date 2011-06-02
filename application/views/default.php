@@ -26,7 +26,5 @@
 </div>
 
 <div id="Sidebar">
-	
 		<?= $sidebar ?>
-
 </div>

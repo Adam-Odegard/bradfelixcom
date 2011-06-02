@@ -6,6 +6,12 @@
 //
 //	For more information, visit:
 //	http://lokeshdhakar.com/projects/lightbox2/
+//	
+//	Modification by Fabian Lange - blog.hma-info.de
+//	 - Integration of automatic resize from Michael R. Bagnall - elusivemind.net & Sebastien Grosjean - ZenCocoon.com
+//	 - do not display caption of previous image if new image has none
+//	 - moved opera hack to resolve disortion in FireFox
+//	 - readded window sizes to getPageSize()
 //
 //	Licensed under the Creative Commons Attribution 2.5 License - http://creativecommons.org/licenses/by/2.5/
 //  	- Free for use in both personal and commercial projects
@@ -26,6 +32,7 @@
     - updateImageList()
     - start()
     - changeImage()
+    - adjustImageSize()
     - resizeImageContainer()
     - showImage()
     - updateDetails()
@@ -34,6 +41,7 @@
     - disableKeyboardNav()
     - keyboardAction()
     - preloadNeighborImages()
+    - getPageSize()
     - end()
     
     Function Calls
@@ -46,15 +54,18 @@
 //  Configurationl
 //
 LightboxOptions = Object.extend({
-    fileLoadingImage:        '/media/images/loading.gif',     
+    fileLoadingImage:        '/media/images/loading.gif',
     fileBottomNavCloseImage: '/media/images/closelabel.gif',
 
-    overlayOpacity: 0.8,   // controls transparency of shadow overlay
+    overlayOpacity: 0.7,   // controls transparency of shadow overlay
 
     animate: true,         // toggles resizing animations
-    resizeSpeed: 7,        // controls the speed of the image resizing animations (1=slowest and 10=fastest)
+    resizeSpeed: 8,        // controls the speed of the image resizing animations (1=slowest and 10=fastest)
 
     borderSize: 10,         //if you adjust the padding in the CSS, you will need to update this variable
+
+    featBrowser: true,     // set it to true or false to choose to auto-adjust the maximum size to the browser
+    breathingSize: 50,     // control the minimum space around the image box
 
 	// When grouping images this is used to write: Image # of #.
 	// Change it for non-english localization
@@ -129,8 +140,7 @@ Lightbox.prototype = {
 
         var objBody = $$('body')[0];
 
-		objBody.appendChild(Builder.node('div',{id:'overlay'}));
-	
+        objBody.appendChild(Builder.node('div',{id:'overlay'}));
         objBody.appendChild(Builder.node('div',{id:'lightbox'}, [
             Builder.node('div',{id:'outerImageContainer'}, 
                 Builder.node('div',{id:'imageContainer'}, [
@@ -162,13 +172,13 @@ Lightbox.prototype = {
         ]));
 
 
-		$('overlay').hide().observe('click', (function() { this.end(); }).bind(this));
-		$('lightbox').hide().observe('click', (function(event) { if (event.element().id == 'lightbox') this.end(); }).bind(this));
-		$('outerImageContainer').setStyle({ width: size, height: size });
-		$('prevLink').observe('click', (function(event) { event.stop(); this.changeImage(this.activeImage - 1); }).bindAsEventListener(this));
-		$('nextLink').observe('click', (function(event) { event.stop(); this.changeImage(this.activeImage + 1); }).bindAsEventListener(this));
-		$('loadingLink').observe('click', (function(event) { event.stop(); this.end(); }).bind(this));
-		$('bottomNavClose').observe('click', (function(event) { event.stop(); this.end(); }).bind(this));
+        $('overlay').hide().observe('click', (function() { this.end(); }).bind(this));
+        $('lightbox').hide().observe('click', (function(event) { if (event.element().id == 'lightbox') this.end(); }).bind(this));
+        $('outerImageContainer').setStyle({ width: size, height: size });
+        $('prevLink').observe('click', (function(event) { event.stop(); this.changeImage(this.activeImage - 1); }).bindAsEventListener(this));
+        $('nextLink').observe('click', (function(event) { event.stop(); this.changeImage(this.activeImage + 1); }).bindAsEventListener(this));
+        $('loadingLink').observe('click', (function(event) { event.stop(); this.end(); }).bind(this));
+        $('bottomNavClose').observe('click', (function(event) { event.stop(); this.end(); }).bind(this));
 
         var th = this;
         (function(){
@@ -206,7 +216,7 @@ Lightbox.prototype = {
 
         // stretch overlay to fill page and fade in
         var arrayPageSize = this.getPageSize();
-        $('overlay').setStyle({ width: arrayPageSize[0] + 'px', height: arrayPageSize[1] + 'px' });
+        $('overlay').setStyle({height: arrayPageSize[3] + 'px' });
 
         new Effect.Appear(this.overlay, { duration: this.overlayDuration, from: 0.0, to: LightboxOptions.overlayOpacity });
 
@@ -231,7 +241,7 @@ Lightbox.prototype = {
         var lightboxTop = arrayPageScroll[1] + (document.viewport.getHeight() / 10);
         var lightboxLeft = arrayPageScroll[0];
         this.lightbox.setStyle({ top: lightboxTop + 'px', left: lightboxLeft + 'px' }).show();
-        
+        if (LightboxOptions.featBrowser == true) { Event.observe(window, 'resize', (function(e) {this.adjustImageSize(true); }).bind(this)); }
         this.changeImage(imageNum);
     },
 
@@ -249,20 +259,59 @@ Lightbox.prototype = {
         this.hoverNav.hide();
         this.prevLink.hide();
         this.nextLink.hide();
-		// HACK: Opera9 does not currently support scriptaculous opacity and appear fx
-        this.imageDataContainer.setStyle({opacity: .0001});
-        this.numberDisplay.hide();      
+        this.imageDataContainer.hide();
+        this.numberDisplay.hide();
         
         var imgPreloader = new Image();
         
         // once image is preloaded, resize image container
-
-
         imgPreloader.onload = (function(){
             this.lightboxImage.src = this.imageArray[this.activeImage][0];
-            this.resizeImageContainer(imgPreloader.width, imgPreloader.height);
+            this.imageArray[this.activeImage][2] = imgPreloader.width;
+            this.imageArray[this.activeImage][3] = imgPreloader.height;
+            this.adjustImageSize(false);
         }).bind(this);
         imgPreloader.src = this.imageArray[this.activeImage][0];
+    },
+
+    //
+    //  adjustImageSize()
+    //  adjust image size if option featBrowser is set to true
+    //
+    adjustImageSize: function( recall ) {
+        // get image size
+        imgWidth = this.imageArray[this.activeImage][2];
+        imgHeight = this.imageArray[this.activeImage][3];
+        var arrayPageSize = this.getPageSize();
+        // adjust image size if featBrowser option is set to true
+        if (LightboxOptions.featBrowser == true) {
+          // calculate proportions 
+          var imageProportion = imgWidth / imgHeight;
+          var winProportion = arrayPageSize[2] / arrayPageSize[3];
+
+          if (imageProportion > winProportion) {
+            // calculate max width base on page width
+            var maxWidth = arrayPageSize[2] - (LightboxOptions.borderSize * 4) - (LightboxOptions.breathingSize * 2);
+            var maxHeight = Math.round(maxWidth / imageProportion);
+          } else {
+            // calculate maw height base on page height
+            var maxHeight = arrayPageSize[3] - (LightboxOptions.borderSize * 5) - (arrayPageSize[3] / 15) - LightboxOptions.breathingSize;
+            var maxWidth = Math.round(maxHeight * imageProportion);
+          }
+          if (imgWidth > maxWidth || imgHeight > maxHeight) {
+            imgWidth = maxWidth;
+            imgHeight = maxHeight;
+          }
+        }
+        this.overlay.setStyle({ height: arrayPageSize[3] + 'px' });
+        this.lightboxImage.setStyle({ height: imgHeight + 'px', width: imgWidth + 'px'});
+
+        if (recall == true) {
+          this.outerImageContainer.setStyle({height: (imgHeight + (LightboxOptions.borderSize * 2)) + 'px', width: (imgWidth + (LightboxOptions.borderSize * 2)) + 'px'});
+          this.imageDataContainer.setStyle({ width: (imgWidth + (LightboxOptions.borderSize * 2)) + 'px' });
+        } else {
+          this.resizeImageContainer(imgWidth, imgHeight);
+        }
     },
 
     //
@@ -325,17 +374,15 @@ Lightbox.prototype = {
     //  Display caption, image number, and bottom nav.
     //
     updateDetails: function() {
-    
-        // if caption is not null
-        if (this.imageArray[this.activeImage][1] != ""){
-            this.caption.update(this.imageArray[this.activeImage][1]).show();
-        }
-        
+        this.caption.update(this.imageArray[this.activeImage][1] ? this.imageArray[this.activeImage][1] : "").show();
+
         // if image is part of set display 'Image x of x' 
         if (this.imageArray.length > 1){
             this.numberDisplay.update( LightboxOptions.labelImage + ' ' + (this.activeImage + 1) + ' ' + LightboxOptions.labelOf + '  ' + this.imageArray.length).show();
         }
-
+        //opera 9 hack moved here
+        this.imageDataContainer.setStyle({opacity: .0001});
+        this.imageDataContainer.show();
         new Effect.Parallel(
             [ 
                 new Effect.SlideDown(this.imageDataContainer, { sync: true, duration: this.resizeDuration, from: 0.0, to: 1.0 }), 
@@ -344,9 +391,6 @@ Lightbox.prototype = {
             { 
                 duration: this.resizeDuration, 
                 afterFinish: (function() {
-	                // update overlay size and update nav
-	                var arrayPageSize = this.getPageSize();
-	                this.overlay.setStyle({ height: arrayPageSize[1] + 'px' });
 	                this.updateNav();
                 }).bind(this)
             } 
@@ -490,7 +534,7 @@ Lightbox.prototype = {
 			pageWidth = windowWidth;
 		}
 
-		return [pageWidth,pageHeight];
+		return [pageWidth,pageHeight,windowWidth,windowHeight];
 	}
 }
 
