@@ -15,8 +15,6 @@
 		
 		<li id="mainMenu_Portfolio" class="menu_ns" onclick="window.location = '/portfolio'"><a href="/portfolio/">Portfolio</a></li>
 		
-		<li id="mainMenu_Traffic" class="menu_ns" onclick="window.location = '/traffic'"><a href="/traffic/">Traffic</a></li>
-		
 		<li id="mainMenu_Weather" class="menu_ns" onclick="window.location = '/weather'"><a href="/weather/">Weather</a></li>
 		
 		<li id="mainMenu_Contact" class="menu_ns" onclick="window.location = '/contact'"><a href="/contact/">Contact</a></li>
