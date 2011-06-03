@@ -26,7 +26,11 @@ class Home extends CI_Controller {
 		$data['rotator'] = $this->load->view('rotator', '', TRUE);
 		$data['twitter'] = $this->load->view('twitter', '', TRUE);
 		$data['facebook'] = $this->load->view('facebook', '', TRUE);
-		$data['sidebar'] = $this->load->view('sidebar', '', TRUE);
+		
+		$this->load->model("photomodel");
+		$data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
+		
+		$data['sidebar'] = $this->load->view('sidebar',$data, TRUE);
 		
 		/***********************
 			TEMPLATE STUFF

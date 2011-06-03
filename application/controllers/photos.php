@@ -13,7 +13,7 @@ class Photos extends CI_Controller {
 		$this->load->model("photomodel");
 		$data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
 		
-		$data['sidebar'] = $this->load->view('sidebar', '', TRUE);
+		$data['sidebar'] = $this->load->view('sidebar',$data, TRUE);
 		
 		/***********************
 			TEMPLATE STUFF

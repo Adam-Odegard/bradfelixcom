@@ -19,7 +19,10 @@ class Weather extends CI_Controller {
 		
 		
 		
-		$data['sidebar'] = $this->load->view('sidebar', '', TRUE);
+		$this->load->model("photomodel");
+		$data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
+		
+		$data['sidebar'] = $this->load->view('sidebar',$data, TRUE);
 		
 		/***********************
 			TEMPLATE STUFF

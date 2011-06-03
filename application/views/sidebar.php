@@ -8,11 +8,34 @@ flashvars="hostname=cowbell.grooveshark.com&playlistID=50110152&bbg=0000ff&bth=0
 		<a href="http://click.linksynergy.com/fs-bin/click?id=U8lA2opZT2g&offerid=146261.10005774&type=4&subid=0"><IMG alt="" border="0" src="http://images.apple.com/itunesaffiliates/US/generic/GreyTopSongs_300x250.jpg"></a><IMG border="0" width="1" height="1" src="http://ad.linksynergy.com/fs-bin/show?id=U8lA2opZT2g&bids=146261.10005774&type=4&subid=0">			
 	</div>
 
-	<!--
-<div class="row" id="photos_container" style="margin-top:20px; margin-bottom:20px; margin-left:3px;">
-		{ widget:/PhotosWidget/Show }
+	<div class="row" id="photos_container" style="margin-top:20px; margin-bottom:20px; margin-left:3px;">
+		<div id="photos_container" style="padding--bottom:20px;">
+		<div id="photos_header"><div style="margin-top:7px; text-align:left; margin-left:10px; color:#000; font-size:18px;">Photos</div></div>
+		<div id="photos_block">
+				<? $count = 0; ?>
+				<div style="margin-left:14px;">
+				<? foreach($album_list as $x) { ?>
+				<? if($count < 4) { ?>
+					<div style="float:left; width:75px; margin-left:40px; margin-top:15px;">
+						<a href="/photos/view/<?=$x['album_id'];?>/<?=$x['title'];?>/">
+							<img src="<?=$x['gallery_image'];?>" height="75" width="75" border="0" style="border:1px solid #000;"/>
+						</a>
+						
+							<div class="photo_main_text">
+								<a href="/photos/view/<?=$x['album_id'];?>/<?=$x['title'];?>/">
+									<?=$x['title'];?> (<?=$x['num_of_photos'];?>)
+								</a>
+							</div>
+					</div>
+					<? $count++; }?>
+					
+				<? } ?>
+				</div>
+				<div class="row reflowFiller"></div>
+				<div id="photos_footer"><a href="/photos">View more photos...</a></div>
+		</div>
+		</div>
 	</div>
--->
 
 	<div class="row"></div>
 	
