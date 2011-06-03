@@ -26,9 +26,9 @@ class Gators extends CI_Controller {
 		$this->pagination->initialize($config); 
 		
 		$this->load->model("photomodel");
-		$data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
+		$this->data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
 		
-		$data['sidebar'] = $this->load->view('sidebar',$data, TRUE);
+		$this->data['sidebar'] = $this->load->view('sidebar',$this->data, TRUE);
 		
 		/***********************
 			TEMPLATE STUFF
