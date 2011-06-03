@@ -23,6 +23,17 @@
 	left:965px;
 }
 
+#authwrap{
+	margin-left:20px;
+}
+
+#authwrap p{
+	float:left;
+	clear:both;
+	font-size:14px;
+	font-weight:bold;
+}
+
 #formerror_wrap{
 	display:none;
 	float:left;
@@ -38,10 +49,8 @@
 }
 
 #formsuccess{
-	display:none;
 	float:left;
 	clear:both;
-	width:800px;
 	background-color:#E0EEE0;
 	border:3px solid #33CC00;
 	margin-bottom:20px;
@@ -49,4 +58,10 @@
 
 #formsuccess .green{
 	margin:10px;
+}
+
+#result{
+	float:left;
+	clear:both;
+
 }
