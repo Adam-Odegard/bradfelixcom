@@ -7,34 +7,42 @@ class Newsfeedmodel extends CI_Model
     {
         // Call the Model constructor
         parent::__construct();
+        $this->load->driver('cache');
     }
     
-	function getAppropriateData($offset,$limit,$feed){
-			
-		$allData = $this->getData($feed);
-		$xml = simplexml_load_string($allData,'SimpleXMLElement', LIBXML_NOCDATA);
+	function getAppropriateData($offset,$limit,$feed,$page){
 		
-		$allDataArraySize = sizeof($xml->channel->item) - 1;
+		if ( ! $hardData = $this->cache->get($page))
+		{	
+			$allData = $this->getData($feed);
+			$xml = simplexml_load_string($allData,'SimpleXMLElement', LIBXML_NOCDATA);
 			
-		if($offset != 1){
-			$offset++;
-		}else{
-			
-		}
-		
-		$goal = $offset + $limit;
-		
-		for($i=$offset;$i<=$goal;$i++){
-		
-			$title = $xml->xpath('/rss/channel/item['.$i.']/title');
-			$description = $xml->xpath('/rss/channel/item['.$i.']/description');
-			$pubDate = $xml->xpath('/rss/channel/item['.$i.']/pubDate');
-			$link = $xml->xpath('/rss/channel/item['.$i.']/link');
-			
-			if($i<=$allDataArraySize){
-				$hardData[] = Array("title"=>(string)$title[0],"description"=>(string)$description[0],"pubDate"=>(string)$pubDate[0],"link"=>(string)$link[0]);
+			$allDataArraySize = sizeof($xml->channel->item) - 1;
+				
+			if($offset != 1){
+				$offset++;
+			}else{
+				
 			}
 			
+			$goal = $offset + $limit;
+			
+			for($i=$offset;$i<=$goal;$i++){
+			
+				$title = $xml->xpath('/rss/channel/item['.$i.']/title');
+				$description = $xml->xpath('/rss/channel/item['.$i.']/description');
+				$pubDate = $xml->xpath('/rss/channel/item['.$i.']/pubDate');
+				$link = $xml->xpath('/rss/channel/item['.$i.']/link');
+				
+				if($i<=$allDataArraySize){
+					$hardData[] = Array("title"=>(string)$title[0],"description"=>(string)$description[0],"pubDate"=>(string)$pubDate[0],"link"=>(string)$link[0]);
+				}
+				
+			}
+			
+			// Save into the cache for 10 minutes
+		 	$this->cache->save($page, $hardData, 600);
+		
 		}
 		
 		

@@ -11,7 +11,7 @@ class Gators extends CI_Controller {
 	{
 		
 		$this->load->model("newsfeedmodel");
-		$this->data["rss"] = $this->newsfeedmodel->getAppropriateData($offset,$limit,'http://www.gatorzone.com/rss/');
+		$this->data["rss"] = $this->newsfeedmodel->getAppropriateData($offset,$limit,'http://www.gatorzone.com/rss/','gators');
 		$feedSize = $this->newsfeedmodel->feedSize('http://www.gatorzone.com/rss/');
 	
 		$this->load->library('pagination');

@@ -22,6 +22,8 @@ class Home extends CI_Controller {
 
 	public function index($data = "")
 	{
+		$this->output->cache(60);
+		
 		
 		$data['rotator'] = $this->load->view('rotator', '', TRUE);
 		$data['twitter'] = $this->load->view('twitter', '', TRUE);
@@ -36,6 +38,7 @@ class Home extends CI_Controller {
 			TEMPLATE STUFF
 		************************/
 			$this->template->set_template('default');
+			
 			//set template title
 			$this->template->write('title', 'bradfelix.com');
 			

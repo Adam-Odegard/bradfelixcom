@@ -9,7 +9,8 @@ class TimTebow extends CI_Controller {
 
 	public function index($data = "")
 	{
-				
+		$this->output->cache(5);
+			
 		/***********************
 			TEMPLATE STUFF
 		************************/

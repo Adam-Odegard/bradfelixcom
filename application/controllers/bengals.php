@@ -9,9 +9,14 @@ class Bengals extends CI_Controller {
 
 	public function feed($offset = 1,$limit = 4)
 	{
+		$this->load->model("photomodel");
+		$this->data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
+		
+		$this->data['sidebar'] = $this->load->view('sidebar',$this->data, TRUE);
+	
 		
 		$this->load->model("newsfeedmodel");
-		$this->data["rss"] = $this->newsfeedmodel->getAppropriateData($offset,$limit,'http://www.bengals.com/cda-web/rss-module.htm?tagName=News%20Stories');
+		$this->data["rss"] = $this->newsfeedmodel->getAppropriateData($offset,$limit,'http://www.bengals.com/cda-web/rss-module.htm?tagName=News%20Stories','bengals');
 		$feedSize = $this->newsfeedmodel->feedSize('http://www.bengals.com/cda-web/rss-module.htm?tagName=News%20Stories');
 	
 		$this->load->library('pagination');
@@ -24,11 +29,6 @@ class Bengals extends CI_Controller {
     	$config['num_links'] = 2;
 
 		$this->pagination->initialize($config); 
-		
-		$this->load->model("photomodel");
-		$this->data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
-		
-		$this->data['sidebar'] = $this->load->view('sidebar',$this->data, TRUE);
 		
 		/***********************
 			TEMPLATE STUFF

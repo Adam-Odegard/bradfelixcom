@@ -9,6 +9,7 @@ class Weather extends CI_Controller {
 
 	public function index($data = "")
 	{
+		$this->output->cache(5);
 		
 		$this->load->model("weathermodel");
 		$weather = $this->weathermodel->getWeatherXML();

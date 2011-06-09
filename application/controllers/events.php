@@ -9,6 +9,7 @@ class Events extends CI_Controller {
 
 	public function index($data = "")
 	{
+		$this->output->cache(5);
 		
 		$this->load->model("photomodel");
 		$data["album_list"] = $this->photomodel->getAlbumLists('bradfelix1');
